@@ -1,23 +1,47 @@
-# FinanceFlow - Personal Finance Tracker
+# FinanceFlow - Personal Finance Tracker 💰
 
-A modern, full-stack personal finance management application built with Next.js, Express, and PostgreSQL. Features automatic bank synchronization, intelligent categorization, and predictive analytics.
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com)
+[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![Node](https://img.shields.io/badge/node-18%2B-green)](https://nodejs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue)](https://www.typescriptlang.org)
 
-## 🚀 Features
+A modern, full-stack personal finance management application built with Next.js 14, Express.js, PostgreSQL, and Redis. Track expenses, manage budgets, and gain insights into your spending patterns.
 
-### Core Functionality
-- **Smart Dashboard** - Real-time spending insights with interactive visualizations
-- **Bank Integration** - Automatic transaction import via Plaid API
-- **Budget Management** - Category-based budgets with rollover support
-- **Bill Tracking** - Recurring payment detection and reminders
-- **Receipt Scanner** - OCR-powered receipt capture and categorization
-- **Investment Tracking** - Portfolio performance with real-time market data
+## ✨ MVP Features Implemented
 
-### Advanced Features
-- **Predictive Analytics** - ML-powered spending forecasts
-- **Tax Categorization** - Automatic tax-deductible expense tracking
-- **Multi-Currency Support** - Real-time exchange rates
-- **Data Export** - CSV, QIF, and tax software formats
-- **Collaborative Accounts** - Shared household finance tracking
+### 🔐 Authentication & Security
+- ✅ JWT-based authentication with access and refresh tokens
+- ✅ Secure password hashing with Argon2
+- ✅ OAuth 2.0 support (Google, GitHub) ready
+- ✅ Rate limiting and CORS protection
+
+### 💳 Transaction Management
+- ✅ Create, read, update, delete transactions
+- ✅ Categorize transactions with system and custom categories
+- ✅ Filter and search transactions
+- ✅ Support for income, expenses, and transfers
+- ✅ Tax-deductible expense tracking
+
+### 📊 Budget Tracking
+- ✅ Create monthly, weekly, yearly budgets
+- ✅ Real-time budget progress tracking
+- ✅ Budget alerts at configurable thresholds
+- ✅ Category-based budget allocation
+
+### 📈 Analytics & Insights
+- ✅ Dashboard with key financial metrics
+- ✅ Spending breakdown by category
+- ✅ Month-over-month comparison
+- ✅ Savings rate calculation
+- ✅ Monthly and yearly summaries
+
+## 🎯 Planned Features
+- 🔄 Bank Integration (Plaid API)
+- 📸 Receipt Scanning (OCR)
+- 🤖 Predictive Analytics
+- 🔔 Bill Reminders
+- 📊 Investment Tracking
+- 🌍 Multi-Currency Support
 
 ## 🏗️ Architecture
 
@@ -80,23 +104,35 @@ financeflow/
     └── deployment/          # Deployment guides
 ```
 
-## 🚦 Getting Started
+## 🚀 Quick Start
 
-### Prerequisites
-- Node.js 18+ and npm
-- PostgreSQL 14+
-- Redis 6+
-- Plaid API credentials (for bank sync)
+### Option 1: Docker (Recommended)
 
-### Installation
-
-1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/financeflow.git
-cd financeflow
+git clone https://github.com/DroidRobot/Personal-Finance-Tracker.git
+cd Personal-Finance-Tracker
+
+# Start all services
+docker-compose up
+
+# Run migrations and seed data
+docker-compose exec backend npx prisma migrate deploy
+docker-compose exec backend npm run db:seed
 ```
 
-2. **Install dependencies**
+**Demo Login:** `demo@financeflow.com` / `Demo123!@#`
+
+### Option 2: Manual Setup
+
+See [SETUP.md](./SETUP.md) for detailed instructions.
+
+### Prerequisites
+- Node.js 18+
+- PostgreSQL 14+
+- Redis 6+
+
+**Old Installation Steps (if needed)**
+
 ```bash
 # Install root dependencies
 npm install
