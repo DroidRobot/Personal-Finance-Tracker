@@ -1,6 +1,6 @@
 # FinanceFlow - Setup Guide
 
-## 🚀 Quick Start with Docker (Recommended)
+## Quick Start with Docker (Recommended)
 
 The easiest way to get started is using Docker Compose:
 
@@ -29,7 +29,7 @@ Demo login:
 - Email: `demo@financeflow.com`
 - Password: `Demo123!@#`
 
-## 📦 Manual Setup
+## Manual Setup
 
 ### Prerequisites
 
@@ -113,7 +113,7 @@ npm run dev
 npm run dev
 ```
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Run all tests
@@ -131,7 +131,7 @@ npm run test:ci
 npm run test:e2e
 ```
 
-## 📊 Database Management
+## Database Management
 
 ```bash
 # Open Prisma Studio (visual database editor)
@@ -148,7 +148,7 @@ npm run db:reset
 npm run db:seed
 ```
 
-## 🔧 Common Issues
+## Common Issues
 
 ### Port already in use
 
@@ -186,7 +186,7 @@ redis-cli ping  # Should return PONG
 docker restart financeflow-redis
 ```
 
-## 🚢 Production Deployment
+## Production Deployment
 
 ### Using Docker
 
@@ -221,14 +221,14 @@ npm run db:migrate:prod
 npx prisma migrate status
 ```
 
-## 📚 Additional Resources
+## Additional Resources
 
 - [API Documentation](./docs/api/README.md)
 - [Architecture Guide](./docs/architecture/README.md)
 - [Contributing Guidelines](./CONTRIBUTING.md)
 - [Deployment Guide](./docs/deployment/README.md)
 
-## 🆘 Support
+## Support
 
 - GitHub Issues: https://github.com/yourusername/financeflow/issues
 - Documentation: https://docs.financeflow.com

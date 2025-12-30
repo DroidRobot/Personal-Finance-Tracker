@@ -1,4 +1,4 @@
-# FinanceFlow - Personal Finance Tracker 💰
+# FinanceFlow - Personal Finance Tracker
 
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
@@ -7,43 +7,43 @@
 
 A modern, full-stack personal finance management application built with Next.js 14, Express.js, PostgreSQL, and Redis. Track expenses, manage budgets, and gain insights into your spending patterns.
 
-## ✨ MVP Features Implemented
+## MVP Features Implemented
 
-### 🔐 Authentication & Security
-- ✅ JWT-based authentication with access and refresh tokens
-- ✅ Secure password hashing with Argon2
-- ✅ OAuth 2.0 support (Google, GitHub) ready
-- ✅ Rate limiting and CORS protection
+### Authentication & Security
+- JWT-based authentication with access and refresh tokens
+- Secure password hashing with Argon2
+- OAuth 2.0 support (Google, GitHub) ready
+- Rate limiting and CORS protection
 
-### 💳 Transaction Management
-- ✅ Create, read, update, delete transactions
-- ✅ Categorize transactions with system and custom categories
-- ✅ Filter and search transactions
-- ✅ Support for income, expenses, and transfers
-- ✅ Tax-deductible expense tracking
+### Transaction Management
+- Create, read, update, delete transactions
+- Categorize transactions with system and custom categories
+- Filter and search transactions
+- Support for income, expenses, and transfers
+- Tax-deductible expense tracking
 
-### 📊 Budget Tracking
-- ✅ Create monthly, weekly, yearly budgets
-- ✅ Real-time budget progress tracking
-- ✅ Budget alerts at configurable thresholds
-- ✅ Category-based budget allocation
+### Budget Tracking
+- Create monthly, weekly, yearly budgets
+- Real-time budget progress tracking
+- Budget alerts at configurable thresholds
+- Category-based budget allocation
 
-### 📈 Analytics & Insights
-- ✅ Dashboard with key financial metrics
-- ✅ Spending breakdown by category
-- ✅ Month-over-month comparison
-- ✅ Savings rate calculation
-- ✅ Monthly and yearly summaries
+### Analytics & Insights
+- Dashboard with key financial metrics
+- Spending breakdown by category
+- Month-over-month comparison
+- Savings rate calculation
+- Monthly and yearly summaries
 
-## 🎯 Planned Features
-- 🔄 Bank Integration (Plaid API)
-- 📸 Receipt Scanning (OCR)
-- 🤖 Predictive Analytics
-- 🔔 Bill Reminders
-- 📊 Investment Tracking
-- 🌍 Multi-Currency Support
+## Planned Features
+- Bank Integration (Plaid API)
+- Receipt Scanning (OCR)
+- Predictive Analytics
+- Bill Reminders
+- Investment Tracking
+- Multi-Currency Support
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -60,7 +60,7 @@ A modern, full-stack personal finance management application built with Next.js 
 └─────────────────────────────────────────────────────────────┘
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 financeflow/
@@ -104,7 +104,7 @@ financeflow/
     └── deployment/          # Deployment guides
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Option 1: Docker (Recommended)
 
@@ -172,7 +172,7 @@ cd frontend && npm run dev
 
 Access the application at `http://localhost:3000`
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Run all tests
@@ -188,14 +188,14 @@ cd frontend && npm run test
 npm run test:e2e
 ```
 
-## 📊 Performance Metrics
+## Performance Metrics
 
 - **Page Load**: < 1.5s (LCP)
 - **API Response**: < 200ms (p95)
 - **Test Coverage**: > 85%
 - **Lighthouse Score**: > 95
 
-## 🔐 Security Features
+## Security Features
 
 - JWT-based authentication with refresh tokens
 - OAuth 2.0 social login (Google, GitHub)
@@ -205,7 +205,7 @@ npm run test:e2e
 - SQL injection prevention
 - XSS and CSRF protection
 
-## 🚀 Deployment
+## Deployment
 
 ### Docker Deployment
 ```bash
@@ -221,7 +221,7 @@ terraform plan
 terraform apply
 ```
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 - **Framework**: Next.js 14 with App Router
@@ -250,7 +250,7 @@ terraform apply
 - **Monitoring**: Prometheus + Grafana
 - **Logging**: ELK Stack
 
-## 📈 API Documentation
+## API Documentation
 
 Interactive API documentation available at `/api/docs` when running locally.
 
@@ -263,15 +263,15 @@ Key endpoints:
 - `POST /api/analytics/forecast` - Generate spending forecast
 - `POST /api/plaid/link` - Initialize Plaid Link
 
-## 🤝 Contributing
+## Contributing
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for development guidelines.
 
-## 📄 License
+## License
 
 MIT License - see [LICENSE](./LICENSE) for details
 
-## 🏆 Acknowledgments
+## Acknowledgments
 
 - Plaid for banking API
 - OpenAI for categorization ML
