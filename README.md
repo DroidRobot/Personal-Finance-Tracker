@@ -1,1 +1,247 @@
-# Personal-Finance-Tracker
+# FinanceFlow - Personal Finance Tracker
+
+A modern, full-stack personal finance management application built with Next.js, Express, and PostgreSQL. Features automatic bank synchronization, intelligent categorization, and predictive analytics.
+
+## 🚀 Features
+
+### Core Functionality
+- **Smart Dashboard** - Real-time spending insights with interactive visualizations
+- **Bank Integration** - Automatic transaction import via Plaid API
+- **Budget Management** - Category-based budgets with rollover support
+- **Bill Tracking** - Recurring payment detection and reminders
+- **Receipt Scanner** - OCR-powered receipt capture and categorization
+- **Investment Tracking** - Portfolio performance with real-time market data
+
+### Advanced Features
+- **Predictive Analytics** - ML-powered spending forecasts
+- **Tax Categorization** - Automatic tax-deductible expense tracking
+- **Multi-Currency Support** - Real-time exchange rates
+- **Data Export** - CSV, QIF, and tax software formats
+- **Collaborative Accounts** - Shared household finance tracking
+
+## 🏗️ Architecture
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                         Frontend (Next.js)                   │
+├─────────────────────────────────────────────────────────────┤
+│                      API Gateway (Express)                   │
+├─────────────────────────────────────────────────────────────┤
+│  Auth Service │ Transaction │ Analytics │ Integration        │
+│               │   Service   │  Service  │   Service          │
+├─────────────────────────────────────────────────────────────┤
+│                    PostgreSQL Database                       │
+├─────────────────────────────────────────────────────────────┤
+│                    Redis Cache Layer                         │
+└─────────────────────────────────────────────────────────────┘
+```
+
+## 📁 Project Structure
+
+```
+financeflow/
+├── frontend/                 # Next.js application
+│   ├── src/
+│   │   ├── app/             # App router pages
+│   │   ├── components/      # React components
+│   │   ├── hooks/           # Custom React hooks
+│   │   ├── lib/             # Utilities and helpers
+│   │   ├── services/        # API client services
+│   │   └── styles/          # Global styles
+│   └── public/              # Static assets
+│
+├── backend/                  # Express.js API
+│   ├── src/
+│   │   ├── api/             # Route handlers
+│   │   ├── services/        # Business logic
+│   │   ├── models/          # Database models
+│   │   ├── middleware/      # Express middleware
+│   │   ├── utils/           # Helper functions
+│   │   └── config/          # Configuration
+│   └── tests/               # Test suites
+│
+├── database/                 # Database schemas
+│   ├── migrations/          # Schema migrations
+│   ├── seeds/               # Sample data
+│   └── scripts/             # DB utilities
+│
+├── shared/                   # Shared types/constants
+│   ├── types/               # TypeScript types
+│   └── constants/           # Shared constants
+│
+├── infrastructure/           # Deployment configs
+│   ├── docker/              # Docker configurations
+│   ├── kubernetes/          # K8s manifests
+│   └── terraform/           # Infrastructure as code
+│
+└── docs/                     # Documentation
+    ├── api/                 # API documentation
+    ├── architecture/        # System design docs
+    └── deployment/          # Deployment guides
+```
+
+## 🚦 Getting Started
+
+### Prerequisites
+- Node.js 18+ and npm
+- PostgreSQL 14+
+- Redis 6+
+- Plaid API credentials (for bank sync)
+
+### Installation
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/yourusername/financeflow.git
+cd financeflow
+```
+
+2. **Install dependencies**
+```bash
+# Install root dependencies
+npm install
+
+# Install frontend dependencies
+cd frontend && npm install
+
+# Install backend dependencies
+cd ../backend && npm install
+```
+
+3. **Set up environment variables**
+```bash
+# Copy example env files
+cp frontend/.env.example frontend/.env.local
+cp backend/.env.example backend/.env
+
+# Edit with your credentials
+# Required: Database URL, JWT secret, Plaid keys
+```
+
+4. **Initialize database**
+```bash
+cd backend
+npm run db:migrate
+npm run db:seed  # Optional: Load sample data
+```
+
+5. **Start development servers**
+```bash
+# Terminal 1: Backend
+cd backend && npm run dev
+
+# Terminal 2: Frontend
+cd frontend && npm run dev
+```
+
+Access the application at `http://localhost:3000`
+
+## 🧪 Testing
+
+```bash
+# Run all tests
+npm run test
+
+# Backend tests with coverage
+cd backend && npm run test:coverage
+
+# Frontend tests
+cd frontend && npm run test
+
+# E2E tests
+npm run test:e2e
+```
+
+## 📊 Performance Metrics
+
+- **Page Load**: < 1.5s (LCP)
+- **API Response**: < 200ms (p95)
+- **Test Coverage**: > 85%
+- **Lighthouse Score**: > 95
+
+## 🔐 Security Features
+
+- JWT-based authentication with refresh tokens
+- OAuth 2.0 social login (Google, GitHub)
+- Two-factor authentication (TOTP)
+- End-to-end encryption for sensitive data
+- Rate limiting and DDoS protection
+- SQL injection prevention
+- XSS and CSRF protection
+
+## 🚀 Deployment
+
+### Docker Deployment
+```bash
+docker-compose up --build
+```
+
+### Production Deployment (AWS)
+```bash
+# Using provided Terraform configs
+cd infrastructure/terraform
+terraform init
+terraform plan
+terraform apply
+```
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Framework**: Next.js 14 with App Router
+- **UI Library**: React 18
+- **Styling**: Tailwind CSS + CSS Modules
+- **State Management**: Zustand
+- **Data Fetching**: TanStack Query
+- **Charts**: Recharts + D3.js
+- **Forms**: React Hook Form + Zod
+- **Testing**: Jest + React Testing Library
+
+### Backend
+- **Runtime**: Node.js
+- **Framework**: Express.js
+- **Database**: PostgreSQL with Prisma ORM
+- **Cache**: Redis
+- **Queue**: Bull (Redis-based)
+- **Authentication**: Passport.js
+- **Validation**: Joi
+- **Testing**: Jest + Supertest
+
+### Infrastructure
+- **Container**: Docker
+- **Orchestration**: Kubernetes
+- **CI/CD**: GitHub Actions
+- **Monitoring**: Prometheus + Grafana
+- **Logging**: ELK Stack
+
+## 📈 API Documentation
+
+Interactive API documentation available at `/api/docs` when running locally.
+
+Key endpoints:
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/login` - User login
+- `GET /api/transactions` - List transactions
+- `POST /api/transactions` - Create transaction
+- `GET /api/budgets` - Get budgets
+- `POST /api/analytics/forecast` - Generate spending forecast
+- `POST /api/plaid/link` - Initialize Plaid Link
+
+## 🤝 Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for development guidelines.
+
+## 📄 License
+
+MIT License - see [LICENSE](./LICENSE) for details
+
+## 🏆 Acknowledgments
+
+- Plaid for banking API
+- OpenAI for categorization ML
+- Chart.js community for visualization tools
+
+---
+
+**Live Demo**: [financeflow.demo.com](https://financeflow.demo.com)  
+**Documentation**: [docs.financeflow.com](https://docs.financeflow.com)
