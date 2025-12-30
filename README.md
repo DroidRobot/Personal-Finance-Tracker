@@ -263,10 +263,6 @@ Key endpoints:
 - `POST /api/analytics/forecast` - Generate spending forecast
 - `POST /api/plaid/link` - Initialize Plaid Link
 
-## Contributing
-
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for development guidelines.
-
 ## License
 
 MIT License - see [LICENSE](./LICENSE) for details
@@ -281,3 +277,4 @@ MIT License - see [LICENSE](./LICENSE) for details
 
 **Live Demo**: [financeflow.demo.com](https://financeflow.demo.com)  
 **Documentation**: [docs.financeflow.com](https://docs.financeflow.com)
+
